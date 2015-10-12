@@ -1,4 +1,4 @@
-/*
+social-profile/*
   Theme Name: Triangle
   Theme Uri: http://www.themeum.com
   Author: Themeum
@@ -804,7 +804,7 @@ ul.sub-menu {
 
 
 .social-profile {
-  background: none repeat scroll 0 0 rgba(137, 97, 46, 0.8);
+  background: none repeat scroll 0 0 rgba(41, 72, 230, 0.8);
   display: none;
   position: absolute;
   text-align: center;
@@ -819,7 +819,7 @@ ul.sub-menu {
 }
 
 .team-single:hover .social-profile{
-  background:rgba(112, 35, 64, 0.9);
+  background:rgba(75, 111, 200, 0.9);
   display: block;
   -webkit-animation: fadeInUp 400ms;
   animation: fadeInUp 400ms;
