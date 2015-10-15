@@ -1,18 +1,31 @@
+
 <?php
-$name       = @trim(stripslashes($_POST['name']));
-$from       = @trim(stripslashes($_POST['email']));
-$subject    = @trim(stripslashes($_POST['subject']));
-$message    = @trim(stripslashes($_POST['message']));
-$to   		= 'ananduxui@gmail.com';
+$su="";
+if(isset($_POST['submit']))
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $from = 'andyuxui@gmail.com';
+    $to = 'andyuxui@gmail.com';
+    $subject = 'the subject';
+    $message = 'Subject: '.$subject.'</br></br></br>'.$message;
+    $headers = 'Name: '.$name.'</br>'.'Email: '.$email;
 
-$headers   = array();
-$headers[] = "MIME-Version: 1.0";
-$headers[] = "Content-type: text/plain; charset=iso-8859-1";
-$headers[] = "From: {$name} <{$from}>";
-$headers[] = "Reply-To: <{$from}>";
-$headers[] = "Subject: {$subject}";
-$headers[] = "X-Mailer: PHP/".phpversion();
+    $send = mail($to, $subject, $message, $headers);
 
-mail($to, $subject, $message, $headers);
+    if($send)
+    {
+        $su = "Thanks for being with us...";
+        echo $su;
+    }
+    else
+    {
+        $su = "Error: unable to send";
+        echo $su;
+        //See note below
+    }
+}
 
-die;
+?>
